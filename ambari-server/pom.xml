@@ -75,7 +75,7 @@
     <commons.net.version>1.4.1</commons.net.version>
     <cloning.version>1.9.2</cloning.version>
     <guava.version>32.1.3-jre</guava.version>
-    <h2database.version>1.4.193</h2database.version>
+    <h2database.version>1.4.198</h2database.version>
     <mockito.core.version>3.5.10</mockito.core.version>
     <mockito.inline.version>3.5.10</mockito.inline.version>
     <objenesis.tck.version>1.2</objenesis.tck.version>
@@ -185,20 +185,17 @@
             <configuration>
               <tasks>
                 <jar destfile="target/DBConnectionVerification.jar">
-                  <fileset dir="${basedir}/target/classes/"
-                    includes="**/DBConnectionVerification.class" />
+                  <fileset dir="${basedir}/target/classes/" includes="**/DBConnectionVerification.class"/>
                   <manifest>
-                    <attribute name="Main-Class"
-                      value="org.apache.ambari.server.DBConnectionVerification" />
+                    <attribute name="Main-Class" value="org.apache.ambari.server.DBConnectionVerification"/>
                   </manifest>
                 </jar>
                 <jar destfile="target/CredentialUtil.jar">
                   <fileset dir="${basedir}/target/classes/">
-                    <include name="**/CredentialUtil*.class" />
+                    <include name="**/CredentialUtil*.class"/>
                   </fileset>
                   <manifest>
-                    <attribute name="Main-Class"
-                               value="org.apache.ambari.server.credentialapi.CredentialUtil" />
+                    <attribute name="Main-Class" value="org.apache.ambari.server.credentialapi.CredentialUtil"/>
                   </manifest>
                 </jar>
               </tasks>
@@ -218,9 +215,9 @@
               <target>
                 <copy todir="${ambari-admin-dir}/target" flatten="true">
                   <fileset dir="${contrib-views-dir}">
-                    <include name="*/target/*jar" />
-                    <exclude name="**/ambari-views-utils*jar" />
-                    <exclude name="**/ambari-views-commons*jar" />
+                    <include name="*/target/*jar"/>
+                    <exclude name="**/ambari-views-utils*jar"/>
+                    <exclude name="**/ambari-views-commons*jar"/>
                   </fileset>
                 </copy>
               </target>
@@ -759,8 +756,7 @@
               <outputDir>${project.basedir}/target/findbugs</outputDir>
               <stylesheet>fancy-hist.xsl</stylesheet>
               <fileMappers>
-                <fileMapper
-                        implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+                <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
                   <targetExtension>.html</targetExtension>
                 </fileMapper>
               </fileMappers>
@@ -945,12 +941,11 @@
                 </goals>
                 <configuration>
                   <target name="ambari-server-compile">
-                    <exec dir="${basedir}" executable="bash"
-                      failonerror="true">
-                      <arg value="${basedir}/set-hdp-repo-url.sh" />
-                      <arg value="${hdpUrlForCentos6}" />
-                      <arg value="${hdpLatestUrl}" />
-                      <arg value="${basedir}" />
+                    <exec dir="${basedir}" executable="bash" failonerror="true">
+                      <arg value="${basedir}/set-hdp-repo-url.sh"/>
+                      <arg value="${hdpUrlForCentos6}"/>
+                      <arg value="${hdpLatestUrl}"/>
+                      <arg value="${basedir}"/>
                     </exec>
                   </target>
                 </configuration>
@@ -1112,7 +1107,7 @@
         <executable.python>${project.basedir}/../ambari-common/src/main/unix/ambari-python-wrap</executable.python>
         <executable.shell>sh</executable.shell>
         <fileextension.shell>sh</fileextension.shell>
-        <fileextension.dot.shell-default></fileextension.dot.shell-default>
+        <fileextension.dot.shell-default/>
         <path.python.1>${project.basedir}/../ambari-common/src/main/python:${project.basedir}/../ambari-agent/src/main/python:${project.basedir}/../ambari-common/src/main/python/ambari_jinja2:${project.basedir}/../ambari-common/src/main/python/ambari_commons:${project.basedir}/../ambari-common/src/test/python:${project.basedir}/src/main/python:${project.basedir}/src/main/python/ambari-server-state:${project.basedir}/src/main/resources/custom_actions:${project.basedir}/src/main/resources/scripts:${project.basedir}/src/test/python</path.python.1>
         <assemblydescriptor>src/main/assemblies/server.xml</assemblydescriptor>
       </properties>
